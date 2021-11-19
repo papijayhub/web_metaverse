@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UsersController;
+use App\Http\Controllers\API\PostController;
 
 
 /*
@@ -23,3 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', [UsersController::class, 'login']);
 Route::post('register', [UsersController::class, 'register']);
 Route::post('reset-password', [UsersController::class, 'resetPassword']);
+//post
+Route::get('get-all-posts', [PostController::class, 'getAllPosts']);
+Route::get('get-posts', [PostController::class, 'getPost']);
+Route::get('search-posts', [PostController::class, 'searchPost']);
+
